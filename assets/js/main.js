@@ -19,7 +19,7 @@ function addStudent(){
 	var estudiante = new Students(nombreStudent, porcentajeTecnicoStudent, porcentajeHSCStudent);
 	estudiantes.push(estudiante);
 
-	miDiv.innerHTML = "Nombre: " + nombreStudent + "<br>Porcentaje Técnico: " + porcentajeTecnicoStudent + "<br>Porcentaje HSC: " + porcentajeHSCStudent;
+	miDiv.innerHTML ="<br>" + "Nombre: " + nombreStudent + "<br>Porcentaje Técnico: " + porcentajeTecnicoStudent + "<br>Porcentaje HSC: " + porcentajeHSCStudent;
 	//miDiv.appendChild(parrafo1);
 }
 
@@ -28,7 +28,7 @@ function printAll(){
 	miDiv.innerHTML = "";
 	//var parrafo1 = document.createElement("p");
 	estudiantes.forEach(function(value){
-		miDiv.innerHTML += "Nombre: " + value.nombre + "<br>";
+		miDiv.innerHTML += "<br>" + "Nombre: " + value.nombre + "<br>" + "Porcentaje Técnico: " + value.porcentajeTecnico + "<br>" + "Porcentaje HSC: " + value.porcentajeHSC + "<br>";
 	});
 	//miDiv.appendChild(parrafo1);
 }

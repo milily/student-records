@@ -9,16 +9,26 @@ function Students(nombre, porcentajeTecnico, porcentajeHSC){
 }
 
 function addStudent(){
-	var nombreStudent = prompt("Nombre de Estudianta:");
+	var nombreStudent = prompt("Nombre de Estudiante:");
 	var porcentajeTecnicoStudent = prompt("Porcentaje Técnico:");
-	var porcentajeHSCStudent = prompt("Porcentaje Habilidades Socio Emocionales");
+	var porcentajeHSCStudent = prompt("Porcentaje Habilidades Socio Emocionales:");
 
 	var miDiv = document.getElementById("mostrar-pantalla");
-	var parrafo1 = document.createElement("p"); 
+	//var parrafo1 = document.createElement("p"); 
 	
 	var estudiante = new Students(nombreStudent, porcentajeTecnicoStudent, porcentajeHSCStudent);
 	estudiantes.push(estudiante);
 
-	parrafo1.innerHTML = "Nombre: " + nombreStudent + "<br>Porcentaje Técnico: " + porcentajeTecnicoStudent + "<br>Porcentaje HSC: " + porcentajeHSCStudent;
-	miDiv.appendChild(parrafo1);
+	miDiv.innerHTML = "Nombre: " + nombreStudent + "<br>Porcentaje Técnico: " + porcentajeTecnicoStudent + "<br>Porcentaje HSC: " + porcentajeHSCStudent;
+	//miDiv.appendChild(parrafo1);
+}
+
+function printAll(){
+	var miDiv = document.getElementById("mostrar-pantalla");
+	miDiv.innerHTML = "";
+	//var parrafo1 = document.createElement("p");
+	estudiantes.forEach(function(value){
+		miDiv.innerHTML += "Nombre: " + value.nombre + "<br>";
+	});
+	//miDiv.appendChild(parrafo1);
 }

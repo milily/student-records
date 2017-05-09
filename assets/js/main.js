@@ -9,9 +9,9 @@ function Students(nombre, porcentajeTecnico, porcentajeHSC){
 }
 
 function addStudent(){
-	var nombreStudent = prompt("nombre de estudianta");
-	var porcentajeTecnicoStudent = prompt("Porcentaje Técnico");
-	var porcentajeHSCStudent = prompt("Porcentaje habilidades socio emocional");
+	var nombreStudent = prompt("Nombre de Estudianta:");
+	var porcentajeTecnicoStudent = prompt("Porcentaje Técnico:");
+	var porcentajeHSCStudent = prompt("Porcentaje Habilidades Socio Emocionales");
 
 	var miDiv = document.getElementById("mostrar-pantalla");
 	var parrafo1 = document.createElement("p"); 
@@ -19,6 +19,6 @@ function addStudent(){
 	var estudiante = new Students(nombreStudent, porcentajeTecnicoStudent, porcentajeHSCStudent);
 	estudiantes.push(estudiante);
 
-	parrafo1.innerHTML = "Nombre: " + nombreStudent + "<br>porcentaje técnico: " + porcentajeTecnicoStudent + "<br>Porcentaje HSC: " + porcentajeHSCStudent;
+	parrafo1.innerHTML = "Nombre: " + nombreStudent + "<br>Porcentaje Técnico: " + porcentajeTecnicoStudent + "<br>Porcentaje HSC: " + porcentajeHSCStudent;
 	miDiv.appendChild(parrafo1);
 }

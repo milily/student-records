@@ -1,34 +1,29 @@
-//Constructor:
-
 var estudiantes = [];
 
+//Constructor:
 function Students(nombre, porcentajeTecnico, porcentajeHSC){
-	this.nombre = nombre;
-	this.porcentajeTecnico = porcentajeTecnico;
-	this.porcentajeHSC = porcentajeHSC;
+    this.nombre = nombre;
+    this.porcentajeTecnico = porcentajeTecnico;
+    this.porcentajeHSC = porcentajeHSC;
 }
 
 function addStudent(){
-	var nombreStudent = prompt("Nombre de Estudiante:");
-	var porcentajeTecnicoStudent = prompt("Porcentaje Técnico:");
-	var porcentajeHSCStudent = prompt("Porcentaje Habilidades Socio Emocionales:");
+    var nombreStudent = prompt("Nombre de Estudiante:");
+    var porcentajeTecnicoStudent = prompt("Porcentaje Técnico:");
+    var porcentajeHSCStudent = prompt("Porcentaje Habilidades Socio Emocionales:");
+    var miDiv = document.getElementById("mostrar-pantalla");
 
-	var miDiv = document.getElementById("mostrar-pantalla");
-	//var parrafo1 = document.createElement("p"); 
-	
-	var estudiante = new Students(nombreStudent, porcentajeTecnicoStudent, porcentajeHSCStudent);
-	estudiantes.push(estudiante);
-
-	miDiv.innerHTML ="<br>" + "Nombre: " + nombreStudent + "<br>Porcentaje Técnico: " + porcentajeTecnicoStudent + "<br>Porcentaje HSC: " + porcentajeHSCStudent;
-	//miDiv.appendChild(parrafo1);
+    var estudiante = new Students(nombreStudent, porcentajeTecnicoStudent, porcentajeHSCStudent);
+    estudiantes.push(estudiante);
+    miDiv.innerHTML = "<p>" + "<span>" + "Nombre: " + "</span>"+nombreStudent + "<span>" + "<br>Porcentaje Técnico: "+ "</span>" + porcentajeTecnicoStudent + "%" + "<span>" +"<br>Porcentaje HSC: " + "</span>" + porcentajeHSCStudent + "%" + "</p>";
 }
 
+//Desarrollo del botón que debe imprimir en pantalla todas las estudiantes ingresadas con el botón AddStudent()
+
 function printAll(){
-	var miDiv = document.getElementById("mostrar-pantalla");
-	miDiv.innerHTML = "";
-	//var parrafo1 = document.createElement("p");
-	estudiantes.forEach(function(value){
-		miDiv.innerHTML += "<br>" + "Nombre: " + value.nombre + "<br>" + "Porcentaje Técnico: " + value.porcentajeTecnico + "<br>" + "Porcentaje HSC: " + value.porcentajeHSC + "<br>";
-	});
-	//miDiv.appendChild(parrafo1);
+    var miDiv = document.getElementById("mostrar-pantalla");
+    miDiv.innerHTML = "";
+    estudiantes.forEach(function(value){
+    miDiv.innerHTML += "<p>" + "<span>" + "Nombre: "+ "</span>" + value.nombre + "<span>" + "<br>" + "Porcentaje Técnico: " + "</span>" + value.porcentajeTecnico + "%" + "<span>" + "<br>" + "Porcentaje HSE: "+ "</span>" + value.porcentajeHSC + "%" + "</p>";
+    }); 
 }
